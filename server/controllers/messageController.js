@@ -11,7 +11,7 @@ const addMessage = async (req, res, next) => {
       sender: from,
     });
     if (data) {
-      return res.json({ message: "message saved.", data });
+      return res.json({ message: "message saved.....", data });
     }
     return res.json({ message: "message not saved ", data });
   } catch (error) {

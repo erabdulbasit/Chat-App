@@ -5,7 +5,7 @@ import Logo from "../assets/logo.svg";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import buffer from "buffer";
-import { registerRoute, setAvatarRoute } from "../utils/APIRoutes";
+import { registerRoute, setAvatarRoute, host } from "../utils/APIRoutes";
 import loader from "../assets/loader.gif";
 import User from "../../../server/model/userModel";
 
@@ -20,9 +20,7 @@ const SetAvatar = () => {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      const response = await axios.get(
-        "http://localhost:5000/api/auth/setAvatar"
-      );
+      const response = await axios.get(`${host}/api/auth/setAvatar`);
 
       if (response.data.success) {
         setAvatars(response.data.avatars);
