@@ -14,7 +14,9 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5173",
-      "https://your-app-name.vercel.app",
+      "https://chat-app-two-gold-68.vercel.app",
+      "https://chat-app-git-main-abdul-basits-projects-01e2f589.vercel.app",
+      "https://chat-d5i0yk4o2-abdul-basits-projects-01e2f589.vercel.app",
     ],
     credentials: true,
   })
@@ -45,7 +47,9 @@ const io = socket(server, {
     origin: [
       "http://localhost:3000",
       "http://localhost:5173",
-      "https://your-app-name.vercel.app",
+      "https://chat-app-two-gold-68.vercel.app",
+      "https://chat-app-git-main-abdul-basits-projects-01e2f589.vercel.app",
+      "https://chat-d5i0yk4o2-abdul-basits-projects-01e2f589.vercel.app",
     ],
     credentials: true,
   },
