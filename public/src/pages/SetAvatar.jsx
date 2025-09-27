@@ -4,10 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
-import buffer from "buffer";
 import { registerRoute, setAvatarRoute, host } from "../utils/APIRoutes";
 import loader from "../assets/loader.gif";
-import User from "../../../server/model/userModel";
+
 
 const SetAvatar = () => {
   const api = "https://api.multiavatar.com/45678945";
