@@ -9,7 +9,17 @@ const socket = require("socket.io");
 
 require("dotenv").config();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://your-app-name.vercel.app",
+    ],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 app.use("/api/auth", userRoutes);
@@ -29,9 +39,14 @@ const server = app.listen(process.env.PORT, () => {
   console.log(`app is listening on port ${process.env.PORT}`);
 });
 
+// Also update Socket.IO CORS:
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://your-app-name.vercel.app",
+    ],
     credentials: true,
   },
 });
